@@ -1,84 +1,59 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ShieldCheck, Target, Zap } from 'lucide-react';
+import { Download } from 'lucide-react';
+import { siteConfig } from '@/lib/data';
 
-const coreValues = [
-  {
-    icon: ShieldCheck,
-    title: 'High Ownership',
-    description: 'Directly handled end-to-end features and worked closely with QA to resolve issues beyond scope.',
-  },
-  {
-    icon: Target,
-    title: 'Impact Driven',
-    description: 'Delivered production-grade applications under tight deadlines with focus on stability.',
-  },
-  {
-    icon: Zap,
-    title: 'Growth Mindset',
-    description: 'Eagerly transitioning into advanced software and AI-driven solutions.',
-  },
+const pillars = [
+  { label: 'Production ownership', detail: 'End-to-end from architecture to deployment' },
+  { label: 'Self-directed transition', detail: 'Non-CS background — built via real systems' },
+  { label: 'Niche depth', detail: 'Healthcare tech, DICOM, IoT — rare at this level' },
 ];
 
 export function About() {
   return (
     <section id="about" className="py-24 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-12 lg:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
-              Professional <span className="text-indigo-500">Journey</span>
-            </h2>
-            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                I am a Backend-focused Full Stack Engineer with over 2 years of experience building 
-                production-grade web, cloud, and device-integrated systems. My professional journey 
-                is built on a foundation of <span className="text-foreground font-medium">high ownership</span> 
-                and a commitment to delivering features that ensure long-term stability and impact.
-              </p>
-              <p>
-                I have independently handled end-to-end features for international e-commerce platforms 
-                and designed scalable medical imaging (DICOM) pipelines. My work often sits at the 
-                intersection of software and hardware, where I develop resilient services for 
-                IoT/edge devices and manage distributed systems in Linux environments.
-              </p>
-              <p>
-                Deeply interested in the future of software, I am actively integrating 
-                AI-assisted workflows and Generative AI concepts into my engineering practices, 
-                striving to build smarter, more flexible solutions for complex technical challenges.
-              </p>
-            </div>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl mx-auto"
+        >
+          <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
+            Engineer who builds <span className="text-indigo-500">systems</span>, not just features.
+          </h2>
 
-          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1">
-            {coreValues.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex gap-4 rounded-xl border border-border p-6 glassmorphism"
-              >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-500">
-                  <value.icon className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="mb-2 font-bold">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
-              </motion.div>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            I started with a B.Tech in Textile Technology and made a self-directed transition into
+            software engineering through production work — no bootcamp, no shortcuts. In 2+ years
+            I&apos;ve built DICOM medical imaging pipelines on AWS, IoT edge services running on
+            Raspberry Pi devices in hospitals, and secure e-commerce backends serving customers in
+            Canada. My background means I approach problems from first principles and take full
+            ownership of the systems I build.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+            {pillars.map((pillar) => (
+              <div key={pillar.label} className="rounded-xl border border-border p-4 bg-muted/30">
+                <p className="text-sm font-semibold text-foreground">{pillar.label}</p>
+                <p className="text-xs text-muted-foreground mt-1">{pillar.detail}</p>
+              </div>
             ))}
           </div>
-        </div>
+
+          <div className="mt-8">
+            <a
+              href={siteConfig.resumeUrl}
+              download
+              className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            >
+              Download Resume
+              <Download className="ml-2 h-4 w-4" />
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
