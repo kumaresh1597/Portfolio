@@ -6,12 +6,12 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kumaresan M | Backend & Cloud Engineer",
-  description: "Backend and cloud engineer with 2+ years building production Node.js, AWS, and IoT systems. Based in Bangalore, open to remote.",
-  keywords: ["Backend Engineer", "Node.js", "AWS", "DICOM", "IoT", "Raspberry Pi", "Cloud Engineer", "Bangalore"],
+  title: "Kumaresan M | Backend Engineer · Node.js · AWS · SaaS",
+  description: "Backend engineer with 2+ years building production SaaS platforms, AWS pipelines, multi-tenant HIPAA architecture, and IoT edge systems. Based in Bangalore, open to remote.",
+  keywords: ["Backend Engineer", "Node.js", "AWS", "DICOM", "IoT", "Raspberry Pi", "Cloud Engineer", "Bangalore", "TypeScript", "GraphQL", "Apollo GraphQL", "FastAPI", "SaaS", "multi-tenant", "HIPAA", "LLM", "Gemini", "Inngest", "Redis", "SQLAlchemy"],
   openGraph: {
-    title: "Kumaresan M | Backend & Cloud Engineer",
-    description: "Production backend systems — AWS pipelines, DICOM imaging, IoT edge devices.",
+    title: "Kumaresan M | Backend Engineer · Node.js · AWS · SaaS",
+    description: "Full-stack SaaS engineer — multi-tenant radiology platform, HIPAA auth architecture, real-time AI pipelines, IoT edge devices.",
     url: "https://portfolio-olive-ten-46.vercel.app",
   },
 };

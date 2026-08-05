@@ -6,8 +6,8 @@ import { siteConfig } from '@/lib/data';
 
 const pillars = [
   { label: 'Production ownership', detail: 'End-to-end from architecture to deployment' },
-  { label: 'Self-directed transition', detail: 'Non-CS background — built via real systems' },
-  { label: 'Niche depth', detail: 'Healthcare tech, DICOM, IoT — rare at this level' },
+  { label: 'Full-stack SaaS depth', detail: 'Lead contributor on a multi-tenant radiology SaaS — clinical editors, LLM pipelines, PDF generation, billing systems' },
+  { label: 'Niche depth', detail: 'Healthcare SaaS, HIPAA architecture, DICOM, IoT — rare combination at this level' },
 ];
 
 export function About() {
@@ -28,10 +28,12 @@ export function About() {
           <p className="text-lg text-muted-foreground leading-relaxed">
             I started with a B.Tech in Textile Technology and made a self-directed transition into
             software engineering through production work — no bootcamp, no shortcuts. In 2+ years
-            I&apos;ve built DICOM medical imaging pipelines on AWS, IoT edge services running on
-            Raspberry Pi devices in hospitals, and secure e-commerce backends serving customers in
-            Canada. My background means I approach problems from first principles and take full
-            ownership of the systems I build.
+            I&apos;ve served as lead full-stack contributor on a multi-tenant SaaS radiology platform
+            (1,300+ commits), architected a HIPAA-compliant multi-tenant auth system with AWS Cognito,
+            built real-time AI document classification pipelines with GraphQL subscriptions and
+            Inngest, and shipped IoT edge services on Raspberry Pi running in hospitals. I work across
+            the full backend stack — from system design to production deployment — and take full
+            ownership of what I build.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">

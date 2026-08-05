@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Kumaresan M",
-  title: "Backend & Cloud Engineer",
+  title: "Backend Engineer · Node.js · AWS · Distributed Systems",
   subtitle: "Node.js · AWS · Distributed Systems · IoT",
-  tagline: "Building production-grade backend systems at the intersection of cloud, APIs, and edge devices.",
+  tagline: "Building production-grade backend systems — multi-tenant SaaS platforms, async cloud pipelines, AI/LLM integrations, and IoT edge services.",
   location: "Bangalore, India",
   openTo: "Open to Bangalore & Remote roles",
   email: "kumaresh.1597@gmail.com",
@@ -24,19 +24,21 @@ export const specialisations = [
     description: "Production AWS architectures — S3, SQS, Lambda, Secrets Manager. Event-driven, async-first design.",
   },
   {
-    icon: "Cpu",
-    title: "IoT & Edge Devices",
-    description: "Python edge services on Raspberry Pi — Bluetooth pairing, FOTA firmware updates, Linux device management.",
+    icon: "Layers",
+    title: "Multi-tenant SaaS",
+    description: "Designed HIPAA-aligned multi-tenant SaaS architecture — 3-tier data isolation, AWS Cognito multi-pool auth, PHI-safe data handling.",
   },
 ];
 
 export const skillCategories = [
-  { category: "Backend",      items: ["Node.js", "Python", "Express.js", "FeathersJS", "REST APIs", "RBAC", "WebSockets"] },
-  { category: "Cloud & AWS",  items: ["S3", "SQS", "Lambda", "Secrets Manager", "Async Pipelines", "Event-driven Arch"] },
-  { category: "Databases",    items: ["PostgreSQL", "MySQL", "MongoDB", "Firebase"] },
-  { category: "Frontend",     items: ["React.js", "Next.js", "Redux Toolkit", "TypeScript", "Tailwind CSS"] },
-  { category: "IoT & Edge",   items: ["Raspberry Pi", "Bluetooth", "FOTA / OTA", "Linux", "DICOM Imaging"] },
-  { category: "Practices",    items: ["Microservices", "Structured Logging", "Swagger", "Agile / Scrum", "Git"] },
+  { category: "Backend",             items: ["Node.js", "Python", "FastAPI", "Express.js", "FeathersJS", "Apollo GraphQL", "REST APIs", "RBAC", "WebSockets"] },
+  { category: "Cloud & AWS",         items: ["S3", "SQS", "Lambda", "Secrets Manager", "AWS Cognito (multi-pool)", "Async Pipelines", "Event-driven Architecture"] },
+  { category: "Multi-Tenant / HIPAA", items: ["Multi-Tenant Architecture", "PHI-Safe Data Handling", "SQLAlchemy (async)", "Alembic", "Control-Plane Design"] },
+  { category: "Databases",           items: ["PostgreSQL", "MySQL", "MongoDB", "Firebase", "Redis"] },
+  { category: "Frontend",            items: ["React.js", "Next.js", "Redux Toolkit", "TypeScript", "Tailwind CSS", "Lexical"] },
+  { category: "IoT & Edge",          items: ["Raspberry Pi", "pynetdicom", "FOTA / OTA", "Bluetooth", "Linux", "DICOM Imaging"] },
+  { category: "Distributed",         items: ["Message Queues", "Inngest", "MongoDB Change Streams", "Microservices", "Retry Logic"] },
+  { category: "Practices",           items: ["Structured Logging", "Swagger", "Agile / Scrum", "Git"] },
 ];
 
 export const experiences = [
@@ -49,14 +51,36 @@ export const experiences = [
     projects: [
       {
         name: "RADX.report",
-        subtitle: "Medical Ultrasound Reporting Platform",
+        subtitle: "Multi-Tenant Radiology SaaS Platform",
         link: "https://radx.report/",
-        stack: ["AWS S3", "SQS", "Lambda", "Python", "FeathersJS", "React", "DICOM"],
+        stack: ["React 18", "TypeScript", "Feathers.js", "PostgreSQL", "AWS Lambda", "SQS", "S3", "Redis", "Gemini/Vertex AI", "Lexical", "Raspberry Pi"],
         bullets: [
-          "Architected end-to-end async DICOM image ingestion pipeline: S3 upload → SQS event → Lambda processor → metadata storage. Chose SQS over direct Lambda for retry resilience and decoupled scaling.",
-          "Built Python edge service on Raspberry Pi managing Bluetooth device pairing, secure cloud sync, structured logging, and FOTA firmware deployment — zero-touch remote updates across production medical devices.",
-          "Integrated FeathersJS backend with React frontend for DICOM-based radiologist reporting workflows; secured credentials via AWS Secrets Manager.",
-          "System passed remote compliance audit. Running in production with zero critical incidents since deployment.",
+          "Served as lead full-stack engineer and largest single contributor (1,300+ commits, ~130k lines added, 3,400 file changes) on a multi-tenant SaaS platform for radiology/ultrasound centres to create, manage, and export structured clinical reports.",
+          "Built a custom Lexical-based clinical report editor from scratch — dynamic variable nodes, templates, shorthand-driven data entry; designed the async LLM pipeline (prompt builder, SQS → Lambda → Gemini/Vertex AI, response caching) and a conversational AI chatbot for report assistance.",
+          "Architected async PDF export pipeline (S3 → SQS → Puppeteer Lambda, polling/status); implemented obstetric/gynaecology clinical calculators (PE/FGR risk, MAP), DICOM image retrieval, backend licensing and billing enforcement, and account-scoped multi-tenant data isolation.",
+          "Built the DICOM SCP edge service (pynetdicom) on Raspberry Pi: receives ultrasound files via C-STORE protocol, runs multi-stage on-device pipeline (SR parsing, JPEG conversion, prioritized S3 upload, backend notification), FOTA with SHA256 verification — passed healthcare compliance audit, zero downtime since deployment.",
+        ],
+      },
+      {
+        name: "TachyonLeap",
+        subtitle: "Multi-Tenant Elder Care SaaS Platform (HIPAA)",
+        link: null,
+        status: "In Progress",
+        stack: ["Python", "FastAPI", "SQLAlchemy", "PostgreSQL", "AWS Cognito", "Redis", "Alembic"],
+        bullets: [
+          "One of several backend engineers on TachyonLeap, a multi-tenant HIPAA-compliant SaaS platform for elder-care monitoring headed for AWS Marketplace — with primary ownership of the tenancy and auth architecture decisions.",
+          "Designed a 3-tier multi-tenant isolation model (shared / DB-isolated / fully-isolated) with a control-plane vs data-plane split; architected AWS Cognito multi-pool auth (one User Pool per org), multi-issuer JWT verification with per-pool JWKS caching in Redis, and PHI-safe phone hashing (HMAC-SHA256) — control-plane database holds zero patient-identifiable data.",
+        ],
+      },
+      {
+        name: "Casey Legal AI",
+        subtitle: "Multi-Tenant B2B Legal AI Platform",
+        link: null,
+        status: "In Progress",
+        stack: ["Node.js", "Apollo GraphQL", "Inngest", "MongoDB Change Streams", "Next.js 15", "FastAPI", "LangGraph"],
+        bullets: [
+          "Sole developer extending an existing multi-service Legal AI codebase (Node.js/Apollo GraphQL backend, Next.js 15 frontend, Python/FastAPI AI orchestration) for a B2B platform covering contract review and compliance research.",
+          "Built end-to-end real-time AI document classification: document upload → Inngest async workflow (lightweight pdf-parse/mammoth extraction, bypassing Azure Document Intelligence to avoid rate-limit saturation on per-upload events) → MongoDB change-stream watcher → GraphQL subscription → live UI update with no polling. Added retry logic with optimistic UI rollback and a many-to-many evidence coverage map linking uploaded documents to compliance checklist items.",
         ],
       },
       {
@@ -78,24 +102,34 @@ export const experiences = [
 
 export const projects = [
   {
-    title: "Async DICOM Imaging Pipeline",
+    title: "RADX.report — Multi-Tenant Radiology SaaS Platform",
     type: "Production System",
-    stack: ["AWS S3", "SQS", "Lambda", "Python", "FeathersJS"],
+    stack: ["React 18", "TypeScript", "Feathers.js", "PostgreSQL", "AWS Lambda", "SQS", "S3", "Gemini/Vertex AI", "Lexical", "Raspberry Pi", "pynetdicom"],
     link: "https://radx.report/",
-    problem: "A medical ultrasound platform needed scalable, automated ingestion of DICOM images — manual handling was not viable at production scale.",
-    built: "Designed and deployed a fully async AWS pipeline: images upload to S3, trigger SQS events, Lambda functions process and store DICOM metadata.",
-    decision: "Chose SQS over direct Lambda invocation for retry resilience, exactly-once delivery semantics, and decoupled scaling between ingestion and processing.",
-    outcome: "Running in production. Passed remote healthcare compliance audit. Zero manual image handling since deployment.",
+    problem: "A network of radiology/ultrasound diagnostic centres needed a scalable SaaS platform to create, manage, and export structured clinical reports — with AI-assisted writing, async PDF generation, and automated DICOM image ingestion from medical devices.",
+    built: "Full-stack multi-tenant SaaS — Lexical-based clinical report editor (variable nodes, templates, shorthands), async LLM pipeline (SQS → Lambda → Gemini/Vertex AI + AI chatbot), PDF export pipeline (S3 → SQS → Puppeteer Lambda), clinical calculators, licensing/billing enforcement, multi-tenant data isolation, and a DICOM SCP edge service on Raspberry Pi (C-STORE receive, SR parsing, prioritised S3 upload, FOTA with SHA256).",
+    decision: "Chose async pipelines (SQS-driven) throughout — for LLM inference, PDF generation, and DICOM ingestion — to decouple processing from user-facing latency and ensure retry resilience at each stage.",
+    outcome: "Running in production. Passed remote healthcare compliance audit. Largest single contributor — 1,300+ commits, ~130k lines added. Zero downtime since deployment.",
   },
   {
-    title: "Raspberry Pi IoT Edge Service",
-    type: "Production System",
-    stack: ["Python", "Raspberry Pi", "Bluetooth", "Linux", "FOTA"],
+    title: "TachyonLeap",
+    type: "In Progress",
+    stack: ["Python", "FastAPI", "SQLAlchemy", "PostgreSQL", "AWS Cognito", "Redis", "Alembic"],
     link: null,
-    problem: "Medical devices in the field needed remote firmware management — updates required costly on-site engineer visits.",
-    built: "Built a Python background daemon on Raspberry Pi: Bluetooth device pairing, secure REST cloud sync, structured logging, and FOTA firmware deployment.",
-    decision: "Used FOTA to enable zero-touch remote updates, eliminating on-site intervention across all production devices.",
-    outcome: "Deployed across production medical devices. Remote firmware management now fully automated.",
+    problem: "Elder-care organisations ranging from small clinics to HIPAA-regulated US hospitals needed a SaaS platform with data isolation that matches their compliance tier — a one-size-fits-all model wasn't viable.",
+    built: "Designed 3-tier multi-tenant isolation (shared / DB-isolated / fully-isolated) with a control-plane vs data-plane split. AWS Cognito multi-pool auth (one User Pool per org), multi-issuer JWT verification with Redis-cached JWKS, and PHI-safe phone hashing (HMAC-SHA256) so the control-plane database holds zero patient-identifiable data.",
+    decision: "Chose per-org Cognito User Pools over a shared pool to ensure hard tenant isolation at the identity layer — shared pools require application-level tenant enforcement which is easier to misconfigure.",
+    outcome: "Architecture designed and in active development. Targeting AWS Marketplace launch.",
+  },
+  {
+    title: "Casey Legal AI",
+    type: "In Progress",
+    stack: ["Node.js", "Apollo GraphQL", "Inngest", "MongoDB Change Streams", "Next.js 15"],
+    link: null,
+    problem: "A B2B Legal AI platform needed real-time feedback to lawyers as they upload compliance evidence documents — waiting until batch processing was too slow for the workflow.",
+    built: "End-to-end real-time classification pipeline as sole developer extending an existing codebase: upload → Inngest async workflow (pdf-parse/mammoth text extraction) → AI classification endpoint → MongoDB change-stream watcher → GraphQL subscription → live UI update, with no polling. Retry logic with optimistic UI rollback and a many-to-many evidence coverage map.",
+    decision: "Used lightweight text extraction (pdf-parse/mammoth) instead of the existing Azure Document Intelligence pipeline — Azure is rate-limited and cost-prohibitive on per-upload frequency; the lightweight extractor is fast enough for classification without OCR overhead.",
+    outcome: "Feature live in staging. Classification results pushed to UI in real time with zero polling.",
   },
   {
     title: "Secure REST API with RBAC",
@@ -134,8 +168,8 @@ export const achievements = [
     description: "Recognised for excellent commitment, prompt availability in addressing production issues, and strong cross-team collaboration.",
   },
   {
-    title: "DSA in Java + Spring Boot",
-    issuer: "Completion Certificate",
-    description: "Hands-on training in data structures, algorithms, and backend specialisation with Spring and Spring Boot.",
+    title: "Lead Contributor — RADX.report",
+    issuer: "Rugas Technologies",
+    description: "Largest single contributor on a production multi-tenant SaaS radiology platform — 1,300+ commits, ~130k lines of code added across frontend, backend, and Lambda microservices over 20 months.",
   },
 ];

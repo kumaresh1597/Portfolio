@@ -89,6 +89,13 @@ export function Experience() {
                     </div>
                   )}
 
+                  {/* Status badge */}
+                  {'status' in project && project.status && (
+                    <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
+                      {project.status}
+                    </div>
+                  )}
+
                   {/* Divider between projects */}
                   {pi < exp.projects.length - 1 && (
                     <div className="border-t border-border/50 my-6" />

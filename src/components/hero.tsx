@@ -1,10 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Mail, Server, Cloud, Cpu } from 'lucide-react';
+import { ArrowRight, Download, Mail, Server, Cloud, Layers } from 'lucide-react';
 import { siteConfig, specialisations } from '@/lib/data';
 
-const iconMap = { Server, Cloud, Cpu } as const;
+const iconMap = { Server, Cloud, Layers } as const;
 type IconName = keyof typeof iconMap;
 
 export function Hero() {
